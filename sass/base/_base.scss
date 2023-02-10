@@ -1,15 +1,30 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  //1rem = 10px 10/16 = 62.5px
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px 9/16= 56.25%
   }
 
-  body{
-    box-sizing: border-box;
+  @include respond(tab-land) {
+    font-size: 50%; //1rem = 8px 8/16= 50%
   }
-  
- 
+  @include respond(big-destop) {
+    font-size: 75%; //1rem = 12px 12/16= 50%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-land) {
+    padding: 0;
+  }
+}

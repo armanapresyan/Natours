@@ -1,7 +1,32 @@
-@mixin clearfix{
-    &::after{
-        content: "";
-        display: table;
-        clear: both;
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//1em = 16px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {  //600/12=37.5em
+      @content;
     }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {   //900/12=56.25em
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {  //1200/12 = 75em
+      @content;
+    }
+  }
+  @if $breakpoint == big-destop {
+    @media (min-width: 112.5em) {  // 1800/12 = 112.5em
+      @content;
+    }
+  }
 }
